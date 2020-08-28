@@ -10,7 +10,7 @@ export class DataService {
   profile:User;
 
   constructor(private http:HttpClient) {
-      this.profile = new User("","","","","")
+      this.profile = new User("","","","","","",0,0,0)
    }
 
 
@@ -21,6 +21,10 @@ export class DataService {
       avatar_url: string
       location:string
       email:string;
+      twitter_username: string;
+      followers: number;
+      following:number;
+      public_repos:number;
     }
     let username: string = 'p-koskey'
     let promise = new Promise((resolve,reject)=>{
@@ -32,7 +36,11 @@ export class DataService {
          this.profile.username = response.login,
          this.profile.image = response.avatar_url,
          this.profile.location = response.location,
-         this.profile.email = response.email
+         this.profile.email = response.email,
+         this.profile.twitter = response.twitter_username
+         this.profile.followers= response.followers
+         this.profile.following = response.following
+         this.profile.repo = response.public_repos
           resolve()
       },
       error=>{
