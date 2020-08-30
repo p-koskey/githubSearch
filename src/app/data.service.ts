@@ -10,6 +10,7 @@ import {environment } from '../environments/environment';
 export class DataService {
   profile:User;
   repo:Repo
+  repos:any;
   constructor(private http:HttpClient) {
       this.profile = new User("","","","","","","","",0,0,0)
       
@@ -83,4 +84,31 @@ export class DataService {
     return promise
   }
 
+  
+
+  search(repoName:string){
+    interface ApiResponse{
+      items:any
+      
+    }
+    let promise = new Promise((resolve,reject)=>{
+      
+      let apiURL = `https://api.github.com/search/repositories?q=${repoName}:assembly&sort=stars&order=desc`
+      this.http.get<ApiResponse>(apiURL).toPromise().then(
+        response =>{
+
+        this.repos =response.items;
+         
+         console.log(response)
+          resolve()
+      },
+      error=>{
+        console.log('Error')
+
+        reject(error)
+      })
+    })
+    
+    return promise
   }
+}

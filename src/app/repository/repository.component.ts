@@ -1,3 +1,5 @@
+import { Repo } from './../repo';
+import { DataService } from './../data.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +8,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./repository.component.css']
 })
 export class RepositoryComponent implements OnInit {
+  repo:Repo;
+  constructor(public dataService:DataService) { }
 
-  constructor() { }
+  searchRepo( repoName:string){  
+    
+    this.dataService.search(repoName);
 
+}
   ngOnInit(): void {
   }
 
 }
+

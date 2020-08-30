@@ -1,17 +1,41 @@
-<div>
-    <div class="form-inline">
-       
-      </div>
+<div class="form-inline mt-3" style="justify-content: center;">
+    <input
+      class="form-control mr-sm-2"
+      type="search"
+      placeholder="Search Repositories"
+      aria-label="Search"
+      #repo
+    />
+    <button
+      class="btn btn-success my-2 my-sm-0"
+      (click)="searchRepo(repo.value)"
+    >
+      Search
+    </button>
+  </div>
     <div class="container p-3">
       <div class="mt-5">
         <div class="card border-info shadow-lg">
           <div class="card-header text-center">
             <h3 style="color: #5bc0de">Repositories</h3>
           </div>
-  
+          <ul *ngFor="let repository of dataService.repos" class="m-3">
+            <li class="" style="text-align: left">
+              <i class="fa fa-folder-o" aria-hidden="true"></i>
+              <a
+                class="badge badge-light"
+                href="{{ repository.html_url }}"
+                target="blank"
+                style="font-size: 15px"
+              >
+                {{ repository.name }}</a
+              >
+              <p style="display: inline">- {{ repository.description }}</p>
+            </li>
+          </ul>
          
         </div>
       </div>
     </div>
-  </div>
+ 
   
