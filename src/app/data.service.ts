@@ -11,7 +11,7 @@ export class DataService {
   profile:User;
   repo:Repo
   constructor(private http:HttpClient) {
-      this.profile = new User("","","","","","",0,0,0)
+      this.profile = new User("","","","","","","","",0,0,0)
       
    }
 
@@ -24,6 +24,8 @@ export class DataService {
       location:string
       email:string;
       twitter_username: string;
+      created_at:string;
+      updated_at: string;
       followers: number;
       following:number;
       public_repos:number;
@@ -39,6 +41,8 @@ export class DataService {
          this.profile.location = response.location,
          this.profile.email = response.email,
          this.profile.twitter = response.twitter_username
+         this.profile.date = response.created_at
+         this.profile.seen =response.updated_at 
          this.profile.followers= response.followers
          this.profile.following = response.following
          this.profile.repo = response.public_repos

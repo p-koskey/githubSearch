@@ -6,6 +6,8 @@ export class User {
         public location:string,
         public email:string,
         public twitter:string,
+        public seen: string,
+        public date: string,
         public followers:number,
         public following:number,
         public repo:number,

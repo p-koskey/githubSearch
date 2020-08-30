@@ -1,25 +1,19 @@
-<div>
-  <nav class="navbar navbar-dark bg-dark">
-    <a class="navbar-brand"
-      ><i class="fa fa-github-alt" aria-hidden="true"></i> GITHUB SEARCH</a
-    >
-    <div class="form-inline">
-      <input
-        class="form-control mr-sm-2"
-        type="search"
-        placeholder="Search Repos & Users"
-        aria-label="Search"
-        (keyup)="searchUser(user.value,$event)"
-        #user
-      />
-      <button
-        class="btn btn-success my-2 my-sm-0"
-        (click)="searchUser(user.value,$event)"
-      >
-        Search
-      </button>
-    </div>
-  </nav>
+<div class="form-inline mt-3" style="justify-content: center;">
+  <input
+    class="form-control mr-sm-2"
+    type="search"
+    placeholder="Search Users"
+    aria-label="Search"
+    (keyup)="searchUser(user.value,$event)"
+    #user
+  />
+  <button
+    class="btn btn-success my-2 my-sm-0"
+    (click)="searchUser(user.value,$event)"
+  >
+    Search
+  </button>
+</div>
   <div class="container p-3">
     <div class="col mt-5">
       <div class="card border-info shadow-lg">
@@ -58,7 +52,7 @@
                 <i class="fa fa-twitter" aria-hidden="true"></i> :
                 {{ profile.twitter }}
               </h5>
-
+              
               <span class="btn btn-light mr-2"
                 >Followers : {{ profile.followers }}
               </span>
@@ -68,13 +62,17 @@
               <span class="btn btn-light mr-2"
                 >Public Repo: {{ profile.repo }}</span
               >
+              <br>
+              <br>
+              <h6>Last online:   {{profile.seen|date}}</h6>
+              <h6>Member Since:  {{profile.date|date}}</h6>
             </div>
           </div>
         </div>
       </div>
     </div>
     <div class="mt-5">
-      <div class="card border-dark shadow-lg">
+      <div class="card border-info shadow-lg">
         <div class="card-header text-center">
           <h3 style="color: #5bc0de">User Repositories</h3>
         </div>
@@ -96,4 +94,3 @@
       </div>
     </div>
   </div>
-</div>
