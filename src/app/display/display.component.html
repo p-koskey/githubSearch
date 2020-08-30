@@ -1,52 +1,98 @@
 <div>
-    <nav class="navbar navbar-dark bg-dark">
-        <a class="navbar-brand"><i class="fa fa-github-alt" aria-hidden="true"></i> GITHUB SEARCH</a>
-        <div class="form-inline">
-          <input class="form-control mr-sm-2" type="search" placeholder="Search Repos & Users" aria-label="Search" #user>
-          <button class="btn btn-success my-2 my-sm-0"  (click)="searchUser(user.value)">Search</button>
-        </div>
-      </nav>
-    <div class="container p-3">
-        <div class="col mt-5 ">
-            <div class="card border-info shadow-lg">
-                <div class="card-header text-center">
-                 <h3 style="color:#5bc0de">User Details</h3>
-                </div>
-                <div class="card-body">             
-                             
-              <div class="col image-container">
-                <img src="{{profile.image}}" alt="" class="float-left d-inline-block mr-5" style="width: 30%; border-radius: 50%;">
-              </div>
-
-              <div class="col mt-3 align-center">  
-                  <div class="card-text">
-                    <h5><i class="fa fa-user" aria-hidden="true"></i> : {{profile.name}}</h5>
-                    <h5><i class="fa fa-user-circle-o" aria-hidden="true"></i> : {{profile.username}}</h5>
-                    <h5><i class="fa fa-map-marker" aria-hidden="true"></i> : {{profile.location}}</h5>
-                    <h5><i class="fa fa-envelope" aria-hidden="true"></i> : {{profile.email}}</h5>
-                    <h5><i class="fa fa-twitter" aria-hidden="true"></i> : {{profile.twitter}}</h5>
-
-                    <span class="btn btn-light mr-2">Followers : {{profile.followers}} </span>
-                    <span class="btn btn-light mr-2">Following: {{profile.following}}</span>
-                    <span class="btn btn-light mr-2">Public Repo: {{profile.repo}}</span>
-
-                  </div>
-             </div>
-                </div>
-            </div>
-        </div>
-      <div class="mt-5">
-        <div class="card border-dark shadow-lg" >
-            <div class="card-header text-center">
-                <h3 style="color:#5bc0de">User Repositories</h3>
-            <ul *ngFor = 'let item of dataService.repo;' class="list-group list-group-flush">
-              <li class="list-group-item" style="text-align:left;"><i class="fa fa-folder-o" aria-hidden="true"></i>               
-                <a class="badge badge-light" href="{{item.html_url}}" target="blank" style="font-size:15px;"> {{item.name}}</a>
-                <p style=" display:inline"> - {{item.description}} </p></li> 
-            
-            </ul>
-          </div>
-      </div>
-      
+  <nav class="navbar navbar-dark bg-dark">
+    <a class="navbar-brand"
+      ><i class="fa fa-github-alt" aria-hidden="true"></i> GITHUB SEARCH</a
+    >
+    <div class="form-inline">
+      <input
+        class="form-control mr-sm-2"
+        type="search"
+        placeholder="Search Repos & Users"
+        aria-label="Search"
+        #user
+      />
+      <button
+        class="btn btn-success my-2 my-sm-0"
+        (click)="searchUser(user.value)"
+      >
+        Search
+      </button>
     </div>
+  </nav>
+  <div class="container p-3">
+    <div class="col mt-5">
+      <div class="card border-info shadow-lg">
+        <div class="card-header text-center">
+          <h3 style="color: #5bc0de">User Details</h3>
+        </div>
+        <div class="card-body">
+          <div class="col image-container">
+            <img
+              src="{{ profile.image }}"
+              alt=""
+              class="float-left d-inline-block mr-5"
+              style="width: 30%; border-radius: 50%"
+            />
+          </div>
+
+          <div class="col mt-3 align-center">
+            <div class="card-text">
+              <h5>
+                <i class="fa fa-user" aria-hidden="true"></i> :
+                {{ profile.name }}
+              </h5>
+              <h5>
+                <i class="fa fa-user-circle-o" aria-hidden="true"></i> :
+                {{ profile.username }}
+              </h5>
+              <h5>
+                <i class="fa fa-map-marker" aria-hidden="true"></i> :
+                {{ profile.location }}
+              </h5>
+              <h5>
+                <i class="fa fa-envelope" aria-hidden="true"></i> :
+                {{ profile.email }}
+              </h5>
+              <h5>
+                <i class="fa fa-twitter" aria-hidden="true"></i> :
+                {{ profile.twitter }}
+              </h5>
+
+              <span class="btn btn-light mr-2"
+                >Followers : {{ profile.followers }}
+              </span>
+              <span class="btn btn-light mr-2"
+                >Following: {{ profile.following }}</span
+              >
+              <span class="btn btn-light mr-2"
+                >Public Repo: {{ profile.repo }}</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mt-5">
+      <div class="card border-dark shadow-lg">
+        <div class="card-header text-center">
+          <h3 style="color: #5bc0de">User Repositories</h3>
+        </div>
+
+        <ul *ngFor="let item of dataService.repo" class="m-3">
+          <li class="" style="text-align: left">
+            <i class="fa fa-folder-o" aria-hidden="true"></i>
+            <a
+              class="badge badge-light"
+              href="{{ item.html_url }}"
+              target="blank"
+              style="font-size: 15px"
+            >
+              {{ item.name }}</a
+            >
+            <p style="display: inline">- {{ item.description }}</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
 </div>
