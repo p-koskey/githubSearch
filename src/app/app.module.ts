@@ -9,6 +9,7 @@ import { DisplayComponent } from './display/display.component';
 import { RepositoryComponent } from './repository/repository.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { TimeCountPipe } from './time-count.pipe';
+import { ButtonStyleDirective } from './button-style.directive';
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import { TimeCountPipe } from './time-count.pipe';
     RepositoryComponent,
     NavbarComponent,
     TimeCountPipe,
+    ButtonStyleDirective,
    
   ],
   imports: [
