@@ -10,6 +10,8 @@ import { RepositoryComponent } from './repository/repository.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { TimeCountPipe } from './time-count.pipe';
 import { ButtonStyleDirective } from './button-style.directive';
+import { NgProgressModule } from '@ngx-progressbar/core';
+import { NgProgressHttpClientModule } from '@ngx-progressbar/http-client';
 
 
 @NgModule({
@@ -20,13 +22,16 @@ import { ButtonStyleDirective } from './button-style.directive';
     NavbarComponent,
     TimeCountPipe,
     ButtonStyleDirective,
+    
    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FontAwesomeModule,
-    HttpClientModule
+    HttpClientModule,
+    NgProgressModule.forRoot(),
+    NgProgressHttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
