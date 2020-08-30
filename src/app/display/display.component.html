@@ -39,9 +39,10 @@
         <div class="card border-dark shadow-lg" >
             <div class="card-header text-center">
                 <h3 style="color:#5bc0de">User Repositories</h3>
-               </div>
             <ul *ngFor = 'let item of dataService.repo;' class="list-group list-group-flush">
-              <li class="list-group-item"><i class="fa fa-folder-o" aria-hidden="true"></i>  {{item.name}} - {{item.description}}</li>
+              <li class="list-group-item" style="text-align:left;"><i class="fa fa-folder-o" aria-hidden="true"></i>               
+                <a class="badge badge-light" href="{{item.html_url}}" target="blank" style="font-size:15px;"> {{item.name}}</a>
+                <p style=" display:inline"> - {{item.description}} </p></li> 
             
             </ul>
           </div>
