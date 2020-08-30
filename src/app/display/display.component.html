@@ -9,11 +9,12 @@
         type="search"
         placeholder="Search Repos & Users"
         aria-label="Search"
+        (keyup)="searchUser(user.value,$event)"
         #user
       />
       <button
         class="btn btn-success my-2 my-sm-0"
-        (click)="searchUser(user.value)"
+        (click)="searchUser(user.value,$event)"
       >
         Search
       </button>

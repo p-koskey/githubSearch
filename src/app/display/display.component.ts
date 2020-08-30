@@ -15,12 +15,12 @@ export class DisplayComponent implements OnInit {
   myUserName:string = 'p-koskey';
   constructor(public dataService:DataService ) { }
   
-  searchUser(username:string){
+  searchUser(username:string, $event){
     if (username!==''){
-      this.dataService.getData(username);
+      this.dataService.getData(username||$event.target.value);
        this.profile = this.dataService.profile;
     
-       this.dataService.getRepo(username);
+       this.dataService.getRepo(username||$event.target.value);
   }
 }
   ngOnInit(): void {
