@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { DisplayComponent } from './display/display.component';
 import { RepositoryComponent } from './repository/repository.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { TimeCountPipe } from './time-count.pipe';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { NavbarComponent } from './navbar/navbar.component';
     DisplayComponent,
     RepositoryComponent,
     NavbarComponent,
+    TimeCountPipe,
   
   ],
   imports: [
