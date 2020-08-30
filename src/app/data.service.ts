@@ -1,3 +1,4 @@
+import { Repo } from './repo';
 import { User } from './user';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
@@ -8,13 +9,14 @@ import {environment } from '../environments/environment';
 })
 export class DataService {
   profile:User;
-
+  repo:Repo
   constructor(private http:HttpClient) {
       this.profile = new User("","","","","","",0,0,0)
+      
    }
 
 
-  getData(){
+  getData(username:string){
     interface ApiResponse{
       name:string
       login:string
@@ -26,7 +28,6 @@ export class DataService {
       following:number;
       public_repos:number;
     }
-    let username: string = 'p-koskey'
     let promise = new Promise((resolve,reject)=>{
       let apiURL = `https://api.github.com/users/${username}?access_token=${environment.apiKey}`
       this.http.get<ApiResponse>(apiURL).toPromise().then(
@@ -49,7 +50,32 @@ export class DataService {
         reject(error)
       })
     })
-    console.log(promise);
+    
+    return promise
+  }
+
+  getRepo(username:string){
+    interface ApiResponse{
+      full_name:string
+      html_url:string
+      ;
+    }
+    let promise = new Promise((resolve,reject)=>{
+      let apiURL = `https://api.github.com/users/${username}/repos?access_token=${environment.apiKey}`
+      this.http.get<ApiResponse>(apiURL).toPromise().then(
+        (res:any) => { // Success
+
+          this.repo = res;
+         
+          resolve();
+      },
+      error=>{
+        console.log('Error')
+
+        reject(error)
+      })
+    })
+    
     return promise
   }
 

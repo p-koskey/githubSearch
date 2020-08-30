@@ -1,3 +1,4 @@
+import { Repo } from './../repo';
 import { User } from './../user';
 import { DataService } from './../data.service';
 import { Component, OnInit } from '@angular/core';
@@ -9,12 +10,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DisplayComponent implements OnInit {
   profile: User;
-  constructor(private dataService:DataService ) { }
-
-  ngOnInit(): void {
-
-  this.dataService.getData();
-   this.profile = this.dataService.profile;
+  repo:Repo;
+  username:string
+  myUserName:string = 'p-koskey';
+  constructor(public dataService:DataService ) { }
+  
+  searchUser(username:string){
+    if (username!==''){
+      this.dataService.getData(username);
+       this.profile = this.dataService.profile;
+    
+       this.dataService.getRepo(username);
   }
+}
+  ngOnInit(): void {
+  
+      this.dataService.getData(this.myUserName);
+      this.profile = this.dataService.profile;
+   
+      this.dataService.getRepo(this.myUserName);
+    
+  
 
+}
 }
