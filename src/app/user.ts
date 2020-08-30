@@ -11,6 +11,7 @@ export class User {
         public followers:number,
         public following:number,
         public repo:number,
+        public prof:string,
       ) {}
 }
 

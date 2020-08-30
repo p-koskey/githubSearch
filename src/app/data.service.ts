@@ -12,7 +12,7 @@ export class DataService {
   repo:Repo
   repos:any;
   constructor(private http:HttpClient) {
-      this.profile = new User("","","","","","","","",0,0,0)
+      this.profile = new User("","","","","","","","",0,0,0,"")
       
    }
 
@@ -30,6 +30,7 @@ export class DataService {
       followers: number;
       following:number;
       public_repos:number;
+      html_url:string;
     }
     let promise = new Promise((resolve,reject)=>{
       let apiURL = `https://api.github.com/users/${username}?access_token=${environment.apiKey}`
@@ -47,6 +48,7 @@ export class DataService {
          this.profile.followers= response.followers
          this.profile.following = response.following
          this.profile.repo = response.public_repos
+         this.profile.prof = response.html_url;
           resolve()
       },
       error=>{
