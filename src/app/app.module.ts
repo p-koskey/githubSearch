@@ -12,6 +12,7 @@ import { TimeCountPipe } from './time-count.pipe';
 import { ButtonStyleDirective } from './button-style.directive';
 import { NgProgressModule } from '@ngx-progressbar/core';
 import { NgProgressHttpClientModule } from '@ngx-progressbar/http-client';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 
 @NgModule({
@@ -22,6 +23,7 @@ import { NgProgressHttpClientModule } from '@ngx-progressbar/http-client';
     NavbarComponent,
     TimeCountPipe,
     ButtonStyleDirective,
+    NotFoundComponent,
     
    
   ],
