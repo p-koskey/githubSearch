@@ -1,3 +1,4 @@
+import { RoutingModule } from './routing/routing.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -22,7 +23,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
     NavbarComponent,
     TimeCountPipe,
     ButtonStyleDirective,
-    NotFoundComponent,
+    NotFoundComponent
     
    
   ],
@@ -31,6 +32,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
     AppRoutingModule,
     FontAwesomeModule,
     HttpClientModule,
+    RoutingModule
   
   ],
   providers: [],

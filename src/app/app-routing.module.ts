@@ -1,20 +1,16 @@
-import { DisplayComponent } from './display/display.component';
+import { RoutingModule } from './routing/routing.module';
+import { AppComponent } from './app.component';
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { RepositoryComponent } from './repository/repository.component';
-import { NotFoundComponent } from './not-found/not-found.component';
-
-const routes: Routes = [
-  { path: 'Users', component: DisplayComponent},
-  { path: 'Repositories', component: RepositoryComponent},
-  { path: '',   redirectTo: '/Users', pathMatch: 'full' },
-  { path:'**', component:NotFoundComponent},
 
 
-];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  declarations: [],
+  imports: [
+    RoutingModule
+  ],
+  exports: [],
+  providers: [],
+  bootstrap: [AppComponent]
 })
 export class AppRoutingModule { }
