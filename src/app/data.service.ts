@@ -95,7 +95,7 @@ export class DataService {
     }
     let promise = new Promise((resolve,reject)=>{
       
-      let apiURL = `https://api.github.com/search/repositories?q=${repoName}:angular&sort=stars&order=desc&per_page=10`
+      let apiURL = `https://api.github.com/search/repositories?q=${repoName}&sort=stars&order=desc&per_page=10`
       this.http.get<ApiResponse>(apiURL).toPromise().then(
         response =>{
 
