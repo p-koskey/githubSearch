@@ -10,8 +10,7 @@ import { RepositoryComponent } from './repository/repository.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { TimeCountPipe } from './time-count.pipe';
 import { ButtonStyleDirective } from './button-style.directive';
-import { NgProgressModule } from '@ngx-progressbar/core';
-import { NgProgressHttpClientModule } from '@ngx-progressbar/http-client';
+
 import { NotFoundComponent } from './not-found/not-found.component';
 
 
@@ -32,8 +31,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
     AppRoutingModule,
     FontAwesomeModule,
     HttpClientModule,
-    NgProgressModule.forRoot(),
-    NgProgressHttpClientModule,
+  
   ],
   providers: [],
   bootstrap: [AppComponent]
