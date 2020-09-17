@@ -1,7 +1,7 @@
 # Github Search
  This website enables users to enter a GitHub username into a form, submit it, and see names and descriptions of that person's public repositories. A person can also look for repositories
  ## Live Demo
-Link : [Github Search](https://p-koskey.github.io/githubsearch/)
+Link : [Github Search](https://p-koskey.github.io/githubSearch/)
 ## Description
 It displays GitHub information such as name, username, profile photos, location,and a list of repositories.It also has a different link to repositories where the user can search any existing repositories on Github
 ## Technologies Used
